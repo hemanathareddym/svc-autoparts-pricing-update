@@ -21,8 +21,8 @@ import org.springframework.messaging.handler.annotation.Payload;
 import java.util.HashMap;
 import java.util.Map;
 
-@EnableKafka
-@Configuration
+//@EnableKafka
+//@Configuration
 public class KafkaConsumerConfig {
 
     @Value(value = "${kafka.bootstrapAddress}")
@@ -80,7 +80,7 @@ public class KafkaConsumerConfig {
         log.info("Received Message in filtered listener (included CT-PT filter): " + message);
     }*/
 
-    @KafkaListener(topics = "stagedAssignment, sfdcAssignment", groupId = "aag")
+    @KafkaListener(topics = "stagedAssignment, sfdcAssignment", groupId = "default")
     public void listenGroupFoo(String message) {
         System.out.println("Received Message in group aag: " + message);
     }

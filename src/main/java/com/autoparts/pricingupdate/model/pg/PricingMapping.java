@@ -1,11 +1,12 @@
-package com.autoparts.pricingupdate.model;
+package com.autoparts.pricingupdate.model.pg;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
-@Table(name = "pricing_update")
-public class PricingUpdate implements Serializable {
+@Table(name = "pricing_mapping")
+public class PricingMapping implements Serializable {
 
     private static final long serialVersionUID = -2343243243242432341L;
     @Id
@@ -17,6 +18,9 @@ public class PricingUpdate implements Serializable {
 
     @Column(name = "pt_id")
     private String ptId;
+
+    @Column(name = "created_timestamp")
+    private Date createdTimestamp;
 
     public long getId() {
         return id;
@@ -40,5 +44,13 @@ public class PricingUpdate implements Serializable {
 
     public void setPtId(String ptId) {
         this.ptId = ptId;
+    }
+
+    public Date getCreatedTimestamp() {
+        return createdTimestamp;
+    }
+
+    public void setCreatedTimestamp(Date createdTimestamp) {
+        this.createdTimestamp = createdTimestamp;
     }
 }
