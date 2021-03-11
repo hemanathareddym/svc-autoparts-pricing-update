@@ -28,4 +28,13 @@ public class AutoPartsConnectorApplication {
         return new CorsFilter(source);
     }
 
+    /*@Bean
+    public SecurityWebFilterChain securityWebFilterChain(
+            ServerHttpSecurity http) {
+        return http.authorizeExchange()
+                .pathMatchers("/actuator/**").permitAll()
+                .anyExchange().authenticated()
+                .and().build();
+    }*/
+
 }
