@@ -37,7 +37,7 @@ public class AutoPartsStagedAssignmentConsumer {
 	private Logger log = LoggerFactory.getLogger(AutoPartsStagedAssignmentConsumer.class);
 
 	@MicroserviceMethod
-    @RequestMapping(method = RequestMethod.POST, value = "/notify")
+    @RequestMapping(method = RequestMethod.GET, value = "/notify")
     @MsLoggingContext({@Element(type = InputType.headers, inputPath = Constants.SHOP_GUID, loggingContextName = Constants.SHOP_GUID),
             @Element(type = InputType.headers, inputPath = Constants.CORRELATION_ID, loggingContextName = Constants.CORRELATION_ID)})
     public MicroserviceResponse notify(MicroserviceResponse msResponse) throws MicroserviceException {
